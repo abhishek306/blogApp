@@ -24,7 +24,7 @@
 
   <div *ngIf="!(blogNameSearch == 'all') && (category == 'all') && !fav && !myBlogs">
     <a *ngFor="let blog of Blogs">
-      <div *ngIf="blog.name == blogNameSearch">
+      <div *ngIf="blog.name.includes(blogNameSearch)">
         <div style="border: solid;padding-left: 3%;border-color: darkgreen;background-color: honeydew">
           <i *ngIf="LoggedUser.favorite.includes(blog.id)==true" (click)="toggleFavorite(blog.id)" style="color: red" class="material-icons">favorite</i>
           <i *ngIf="LoggedUser.favorite.includes(blog.id)==false" (click)="toggleFavorite(blog.id)" style="color: darkgray" class="material-icons">favorite</i>

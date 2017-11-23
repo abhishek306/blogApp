@@ -22,15 +22,14 @@ export class LoginComponent implements OnInit {
   }
 
   newUser(){
-    console.log("inside newUser");
     (<HTMLInputElement>document.getElementById("loginUser")).style.display = 'none';
     (<HTMLInputElement>document.getElementById("createUser")).style.display = 'block';
   }
 
   createUser(name, password){
-    console.log("creating user");
+    // console.log("creating user");
     this.newUserEmit.emit({username: name, password: password, favorite:[]});
-    // (<HTMLInputElement>document.getElementById("loginUser")).style.display = 'block';
-    // (<HTMLInputElement>document.getElementById("createUser")).style.display = 'none';
+    (<HTMLInputElement>document.getElementById("loginUser")).style.display = 'block';
+    (<HTMLInputElement>document.getElementById("createUser")).style.display = 'none';
   }
 }

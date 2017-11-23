@@ -1,11 +1,4 @@
-<!--
-<nav>
-  <a [routerLink] = link.home>Blogs</a>
-  <a [routerLink] = link.about>Login</a>
-</nav>
 
-<router-outlet></router-outlet>
--->
 <app-login *ngIf="!loggedUser" (loginUser)="login($event)" (newUserEmit)="createUser($event)"></app-login>
 <app-main *ngIf="loggedUser" [loggedUser]="loggedUser" (logoutEmit)="logout($event)" (updateUser)="toggleFav($event)"></app-main>
 

@@ -21,9 +21,7 @@ export class DisplayBlogComponent implements OnInit {
   ngOnInit() {
     console.log("inside Display "+this.Blogs);
     console.log(this.LoggedUser);
-      /*this.favoriteBlog();*/
-
-  }
+        }
 
   toggleFavorite(id){
     this.favEmit.emit(id);
@@ -37,9 +35,6 @@ export class DisplayBlogComponent implements OnInit {
   }
 
   showBlog(){
-
-     /* this.favoriteBlog();*/
-    // console.log(this.Blogs);
     var set:string = "block";
     var a = (<HTMLInputElement>document.getElementById("showButton"));
     a.innerHTML="<i class=\"material-icons\" >arrow_drop_up</i>Hide Blogs Content";
@@ -51,19 +46,7 @@ export class DisplayBlogComponent implements OnInit {
     for (var i = 0, len = elements.length; i < len; i++) {
       (<HTMLInputElement>elements[i]).style.display=set;
     }
-    /*    if((<HTMLInputElement>document.getElementById("blogShow"+blog.id)).style.display=="block"){
-      (<HTMLInputElement>document.getElementById("blogShow"+blog.id)).style.display="none";
-    }
-    else{
-      (<HTMLInputElement>document.getElementById("blogShow"+blog.id)).style.display="block";
-    }*/
+
   }
 
-  /*favoriteBlog(){
-    console.log(this.LoggedUser);
-    for(let i = 0;i < this.LoggedUser.favorite.length; i++){
-      console.log(i+" favorite"+this.LoggedUser.favorite[i]);
-      (<HTMLInputElement>document.getElementById("favorite"+this.LoggedUser.favorite[i])).style.color = "red";
-    }
-  }*/
 }

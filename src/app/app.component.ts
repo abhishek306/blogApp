@@ -8,10 +8,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  /*link = {
-    home:["/home"],
-    about:["/about"]
-  }*/
   loggedUser: object= null;
   user:string = "abhishek";
   password:string = "12345";
@@ -36,16 +32,13 @@ export class AppComponent implements OnInit{
     this.request.loadUsers()
       .subscribe((data) =>{
         this.users = data;
-        /*console.log(this.users);*/
       })
   }
 
   login(loginUser){
-    //console.log(username+" "+pass)
     for(var i=0; i< this.users.length; i++){
       if(loginUser.name==this.users[i].username && loginUser.password==this.users[i].password){
         console.log("logged in");
-        /*this.route.navigate(['/home']);*/
         this.loggedUser = this.users[i];
         sessionStorage.setItem("loggedUser", JSON.stringify(this.loggedUser));
         console.log(this.loggedUser);

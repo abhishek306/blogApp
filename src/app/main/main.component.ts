@@ -48,7 +48,6 @@ export class MainComponent implements OnInit {
      console.log(this.category+ "  "+category);
   }
   searchByName(blogName){
-    // console.log('inside searchByname'+blogName);
     this.fav = false;
     this.myBlogs = false;
     this.category = 'all';
@@ -58,7 +57,6 @@ export class MainComponent implements OnInit {
     this.request.loadData()
       .subscribe((data) => {
         this.blogs = data;
-        // console.log(this.blogs);
       })
   }
 
@@ -66,7 +64,6 @@ export class MainComponent implements OnInit {
     this.category = 'all';
     this.blogSearch = 'all';
     if(!this.myBlogs){
-     // <HTMLInputElement>document.getElementById("showFav").disabled = true;
       this.myBlogs = true;
       this.fav = false;
     }
@@ -97,13 +94,6 @@ export class MainComponent implements OnInit {
         })
     }
     else{
-      /*let blogUpdate = {
-        name: blog.name,
-        author:blog.author,
-        desc: blog.desc,
-        category: blog.category,
-        id: updateID
-      }*/
       this.request.updateData(blog, updateID)
         .subscribe((data)=>{
           console.log("inside update"+data);
@@ -140,13 +130,11 @@ export class MainComponent implements OnInit {
     if(this.fav){
       this.myBlogs = false;
       this.fav = false;
-      //(<HTMLInputElement>document.getElementById("showFav")).innerText = "Favorites";
-    }
+     }
     else {
       this.fav = true;
       this.myBlogs = false;
-      //(<HTMLInputElement>document.getElementById("showFav")).innerText = "Show All";
-    }
+     }
   }
   showAllBlogs(){
     this.category = 'all';
