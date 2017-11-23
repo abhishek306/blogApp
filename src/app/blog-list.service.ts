@@ -38,6 +38,10 @@ export class BlogListService {
     return this.http.patch(UPDATE_USER_URL+data.id,data, header)
       .map(res => res.json())
   }
+  newUser(data){
+    return this.http.post(UPDATE_USER_URL,data, header)
+      .map(res => res.json())
+  }
 
   deleteData(id){
     return this.http.delete(UPDATE_URL+id, header)

@@ -58,4 +58,11 @@ export class AppComponent implements OnInit{
       sessionStorage.setItem("loggedUser", null);
     }
   }
+  createUser(user){
+    console.log("creating user : "+user)
+    this.request.newUser(user)
+      .subscribe((data) =>{
+
+      })
+  }
 }

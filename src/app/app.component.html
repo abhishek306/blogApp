@@ -6,6 +6,6 @@
 
 <router-outlet></router-outlet>
 -->
-<app-login *ngIf="!loggedUser" (loginUser)="login($event)"></app-login>
+<app-login *ngIf="!loggedUser" (loginUser)="login($event)" (newUserEmit)="createUser($event)"></app-login>
 <app-main *ngIf="loggedUser" [loggedUser]="loggedUser" (logoutEmit)="logout($event)" (updateUser)="toggleFav($event)"></app-main>
 

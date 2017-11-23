@@ -74,6 +74,12 @@
       "favorite": [
         8
       ]
+    },
+    {
+      "username": "avikal",
+      "password": "12345",
+      "favorite": [],
+      "id": 3
     }
   ]
 }
