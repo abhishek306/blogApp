@@ -1,0 +1,79 @@
+<!--
+&lt;!&ndash;<input type="text" #name>
+<input type="text" #password>&ndash;&gt;
+
+<div class="row" style="background-color: darkgray">
+<br><br>
+</div>
+<div class="row">
+  <form class="col s8 offset-s3">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="username" #name id="first_name" type="text" class="validate">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="password" #password placeholder="password" type="password" class="validate">
+      </div>
+    </div>
+    <div class="row">
+      <button class="waves-effect waves-light btn" (click)="login(name.value,password.value)">Log-in</button>
+    </div>
+  </form>
+</div>
+-->
+
+
+<div class="section"></div>
+<main>
+  <div style="margin-left: 20%">
+    <img style="height: 40%;width: 40%;margin-left: 10%" src="./assets/blog-success.jpg"/>
+    <!--<h3 style="margin-left: 18%">Blog App</h3>-->
+    <div class="section"></div>
+
+    <h5  style="margin-left: 18%" class="indigo-text">Please, login into your account</h5>
+    <h6 id="errorMessage" style="display: none; margin-left: 18%;color: red">... Incorrect username or password !!</h6>
+    <div class="section"></div>
+
+    <div class="container">
+      <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+        <form class="col s12" (submit)="loginCheck(username.value, password.value)">
+          <div class='row'>
+            <div class='col s12'>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class='input-field col s12'>
+              <input class='validate' #username type='text' id='username' />
+              <label for='username'>Enter username</label>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class='input-field col s12'>
+              <input class='validate' #password type='password' id='password' />
+              <label for='password'>Enter your password</label>
+            </div>
+            <label style='float: right;'>
+              <a class='pink-text' style="visibility: hidden" href='#!'><b>Forgot Password?</b></a>
+            </label>
+          </div>
+
+          <br />
+          <div style="margin-left: 20%">
+            <div class='row'>
+              <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+   <!-- <a style="margin-left: 18%" (click)="newUser()">Create account</a>-->
+  </div>
+
+  <div class="section"></div>
+  <div class="section"></div>
+</main>

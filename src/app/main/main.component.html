@@ -1,0 +1,81 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><a (click)="searchCategory('all')">all</a></li>
+  <li class="divider"></li>
+  <li><a (click)="searchCategory('None')">None</a></li>
+  <li class="divider"></li>
+  <li><a (click)="searchCategory('Social')">Social</a></li>
+  <li class="divider"></li>
+  <li><a (click)="searchCategory('Technical')">Technical</a></li>
+  <li class="divider"></li>
+  <li><a (click)="searchCategory('Sports')">Sports</a></li>
+</ul>
+<nav class="row">
+    <div class="nav-wrapper col s3">
+      <form (submit)="searchByName(blogName.value)">
+        <div class="input-field">
+          <input id="search" #blogName placeholder="search blogs by name" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  <div class="nav-wrapper col s9" style="background-color: #333;font-family: Arial;">
+    <div class="row">
+      <div class="col s12">
+        <ul id="nav-mobile" class="hide-on-med-and-down">
+          <li><a class="dropdown-button" data-activates="dropdown1" data-beloworigin="true" data-hover="true">Category<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li> <a id="showFav" (click)="showFav()">Favorites<i class="material-icons right">favorite</i></a></li>
+          <li> <a id="myBlogs" (click)="showMyBlogs()">My Blogs</a></li>
+          <li> <a id="allBlogs" (click)="showAllBlogs()">All Blogs</a></li>
+          <li class="right"><a class="waves-effect" (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!--<form>
+  <div class="input-field center">
+    <input id="search" type="search" required>
+    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+    <i class="material-icons">close</i>
+  </div>
+</form>-->
+<p style="color: #EEEEEE"><b>Hi {{this.loggedUser.username}}</b></p>
+<div class="row" *ngIf="!addNewBlog" style="margin-top: 2%" id="mainBox1">
+  <div class="row">
+    <div class="col s2"></div>
+    <button class="waves-effect waves-light btn" style="background-color: goldenrod; margin-left: 26%" (click)="addNew()">Add your Blog</button>
+  </div>
+  <div class="row">
+    <div class="col s2"></div>
+    <div style="border: solid;border-color: dimgrey;border-radius: 10px;margin-left: 3%; opacity: 0.8" class="col s8">
+      <app-display-blog [Blogs]="blogs" [fav]="fav" [myBlogs]="myBlogs" [blogNameSearch]="blogSearch" [category]="category" [LoggedUser]="loggedUser" (favEmit)="toggleFavorites($event)" (deleteID)="deleteBlog($event)" (update)="updateBlog($event)"></app-display-blog>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="addNewBlog" style="margin-top: 2%" id="mainBox">
+  <div class="row">
+    <button class="waves-effect waves-light btn" style="background-color: goldenrod; margin-left: 40%" (click)="addNew()">Show Blogs</button>
+  </div>
+  <div class="row">
+    <div class="col s6" style="margin-left: 3%;border: solid;border-color: dimgrey;border-radius: 10px; opacity: 0.8">
+      <app-display-blog [Blogs]="blogs" [fav]="fav" [myBlogs]="myBlogs" [blogNameSearch]="blogSearch" [category]="category" [LoggedUser]="loggedUser" (favEmit)="toggleFavorites($event)" (deleteID)="deleteBlog($event)" (update)="updateBlog($event)"></app-display-blog>
+    </div>
+    <div class="col s5" style="margin-left: 2%;border: solid;border-color: dimgrey;border-radius: 10px; opacity: 0.8" >
+      <app-input-blog (emitBlog)="addBlog($event)"></app-input-blog>
+    </div>
+  </div>
+  </div>
+
+
+
+<!--
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      © Created by: Abhishek Aggarwal
+    </div>
+  </div>
+</footer>
+-->

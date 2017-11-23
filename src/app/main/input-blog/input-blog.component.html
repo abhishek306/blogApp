@@ -1,0 +1,35 @@
+
+<div class="card darken-1">
+  <div class="card-content">
+    <span class="card-title">Create New Blog</span>
+
+    <div class="row">
+      <button class="btn" style="display: none">Back</button>
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="blog-name" #name id="name" type="text" class="validate">
+          </div>
+          <div class="col s6">
+            <p>Category</p>
+            <select #category id="category" [(value)]="selected" style="display: block">
+              <option>None</option>
+              <option value="Technical">Technical</option>
+              <option value="Social">Social</option>
+              <option value="Sports">Sports</option>
+            </select>
+          </div>
+          <div class="input-field col s12">
+            <input placeholder="Author-name" #authname id="authname" type="text" class="validate">
+          </div>
+          <div class="input-field col s12">
+            <input placeholder="blog-desc" #desc id="desc" type="text">
+          </div>
+        </div>
+        <a class="center waves-effect waves-light btn" id="submitButton" (click)="newBlog(name.value,authname.value,desc.value,category.value)">POST BLOG</a>
+
+      </form>
+
+    </div>
+  </div>
+</div>

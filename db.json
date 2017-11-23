@@ -1,0 +1,79 @@
+{
+  "blogs": [
+    {
+      "name": "new Blog",
+      "author": "Abhishek",
+      "desc": "anything bddjsvkjdbvnkj",
+      "category": "None",
+      "id": 7,
+      "authorId": 1
+    },
+    {
+      "name": "Second Blog",
+      "author": "abhishek",
+      "desc": "anything to do do it",
+      "category": "Technical",
+      "id": 8,
+      "authorId": 2
+    },
+    {
+      "name": "new blog",
+      "author": "abhishek",
+      "desc": "as always",
+      "category": "Social",
+      "id": 9,
+      "authorId": 1
+    },
+    {
+      "name": "final blog",
+      "author": "ashwini",
+      "desc": "dscdsjc dk csdcjsdcj dskckdsjcdsjsckj dsckj",
+      "category": "Social",
+      "authorId": 1,
+      "id": 10
+    },
+    {
+      "name": "Ek or blog",
+      "author": "abhishek",
+      "desc": "kddskjndknjcdnkcdncdsnkcnjkjcdkj  mn vjjd vjchj vjhfd j dhv h",
+      "category": "None",
+      "authorId": 1,
+      "id": 11
+    },
+    {
+      "name": "Sports Blog",
+      "author": "abhishek",
+      "desc": "sdgdgkevedhje",
+      "category": "Sports",
+      "authorId": 1,
+      "id": 12
+    },
+    {
+      "name": "My technical blog",
+      "author": "abhishek",
+      "desc": "sduclyscbdshcbsdck",
+      "category": "Technical",
+      "authorId": 1,
+      "id": 13
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "abhishek",
+      "password": "12345",
+      "favorite": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": 2,
+      "username": "akash",
+      "password": "12345",
+      "favorite": [
+        8
+      ]
+    }
+  ]
+}

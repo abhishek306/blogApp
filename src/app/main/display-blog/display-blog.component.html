@@ -1,0 +1,94 @@
+<div class="collection">
+ <!-- <button (click)="showFav()">Show Favorites</button>-->
+  <div class="collapsible-header" id="showButton" (click)="showBlog()">
+    <i class="material-icons" >arrow_drop_down</i>
+    Show Blogs Content
+    </div>
+  <!--<button class="waves-effect waves-light btn" id="showButton" (click)="showBlog()">show</button>-->
+  <div *ngIf="!(category == 'all') && !fav && !myBlogs">
+    <a *ngFor="let blog of Blogs">
+      <div *ngIf="blog.category == category">
+        <div style="border: solid;padding-left: 3%;border-color: darkgreen;background-color: honeydew">
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==true" (click)="toggleFavorite(blog.id)" style="color: red" class="material-icons">favorite</i>
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==false" (click)="toggleFavorite(blog.id)" style="color: darkgray" class="material-icons">favorite</i>
+          <h5 style="color: cornflowerblue">{{blog.name}}</h5>
+          <h6 style="color: chocolate">{{blog.category}}</h6>
+          <div class="blogShow" style="display: none">
+            <P style="color: green">{{blog.desc}}</P>
+            <p style="color: black;text-decoration: wavy"><SMALL>BY:{{blog.author}}</SMALL></p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div *ngIf="!(blogNameSearch == 'all') && (category == 'all') && !fav && !myBlogs">
+    <a *ngFor="let blog of Blogs">
+      <div *ngIf="blog.name == blogNameSearch">
+        <div style="border: solid;padding-left: 3%;border-color: darkgreen;background-color: honeydew">
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==true" (click)="toggleFavorite(blog.id)" style="color: red" class="material-icons">favorite</i>
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==false" (click)="toggleFavorite(blog.id)" style="color: darkgray" class="material-icons">favorite</i>
+          <h5 style="color: cornflowerblue">{{blog.name}}</h5>
+          <h6 style="color: chocolate">{{blog.category}}</h6>
+          <div class="blogShow" style="display: none">
+            <P style="color: green">{{blog.desc}}</P>
+            <p style="color: black;text-decoration: wavy"><SMALL>BY:{{blog.author}}</SMALL></p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+  <div *ngIf="(category == 'all') && (blogNameSearch == 'all')">
+    <div *ngIf="!fav && !myBlogs" style="background-color: darkgray">
+      <a *ngFor="let blog of Blogs">
+        <div style="border: solid;padding-left: 3%;border-color: darkgreen;background-color: aliceblue">
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==true" (click)="toggleFavorite(blog.id)" style="color: red" class="material-icons">favorite</i>
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==false" (click)="toggleFavorite(blog.id)" style="color: darkgray" class="material-icons">favorite</i>
+          <h5 style="color: cornflowerblue">{{blog.name}}</h5>
+          <h6 style="color: chocolate">{{blog.category}}</h6>
+          <div class="blogShow" style="display: none">
+            <P style="color: green">{{blog.desc}}</P>
+            <p style="color: black;text-decoration: wavy"><SMALL>BY:{{blog.author}}</SMALL></p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div *ngIf="fav && !myBlogs">
+      <a *ngFor="let blog of Blogs">
+        <div style="border: solid;padding-left: 3%;border-color: darkgreen;background-color: bisque" *ngIf="LoggedUser.favorite.includes(blog.id)">
+          <!--<i (click)="deleteBlog(blog.id)" style="float: right;color: red" class="material-icons">delete</i>
+          <i (click)="updateBlog(blog)" style="float: right;color: limegreen" class="material-icons">mode_edit</i>-->
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==true" (click)="toggleFavorite(blog.id)" style="color: red" class="material-icons">favorite</i>
+          <h5 style="color: cornflowerblue">{{blog.name}}</h5>
+          <h6 style="color: chocolate">{{blog.category}}</h6>
+          <div class="blogShow" style="display: none">
+            <P style="color: green">{{blog.desc}}</P>
+            <p style="color: black;text-decoration: wavy"><SMALL>BY:{{blog.author}}</SMALL></p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    <div *ngIf="myBlogs">
+      <a *ngFor="let blog of Blogs">
+        <div style="border: solid;padding-left: 3%;border-color: darkgreen;background-color: cornsilk" *ngIf="(blog.authorId==LoggedUser.id)">
+          <i (click)="deleteBlog(blog.id)" style="float: right;color: red" class="material-icons">delete</i>
+          <i (click)="updateBlog(blog)" style="float: right;color: limegreen" class="material-icons">mode_edit</i>
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==true" (click)="toggleFavorite(blog.id)" style="color: red" class="material-icons">favorite</i>
+          <i *ngIf="LoggedUser.favorite.includes(blog.id)==false" (click)="toggleFavorite(blog.id)" style="color: darkgray" class="material-icons">favorite</i>
+          <h5 style="color: cornflowerblue">{{blog.name}}</h5>
+          <h6 style="color: chocolate">{{blog.category}}</h6>
+          <div class="blogShow" style="display: none">
+            <P style="color: green">{{blog.desc}}</P>
+            <p style="color: black;text-decoration: wavy"><SMALL>BY:{{blog.author}}</SMALL></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    </div>
+
+</div>
