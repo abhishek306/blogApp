@@ -2,10 +2,14 @@ import { Injectable } from '@angular/core';
 import {Http, Headers} from "@angular/http";
 import "rxjs/add/operator/map";
 
-const BASE_URL = 'http://localhost:3000/blogs';
-const UPDATE_URL = 'http://localhost:3000/blogs/';
-const USERS_URL  = 'http://localhost:3000/users';
-const UPDATE_USER_URL  = 'http://localhost:3000/users/';
+// const BASE_URL = 'http://localhost:3000/blogs';
+// const UPDATE_URL = 'http://localhost:3000/blogs/';
+// const USERS_URL  = 'http://localhost:3000/users';
+// const UPDATE_USER_URL  = 'http://localhost:3000/users/';
+const BASE_URL = 'api/blogs';
+const UPDATE_URL = 'api/blogs/';
+const USERS_URL  = 'api/users';
+const UPDATE_USER_URL  = 'api/users/';
 const header = {headers: new Headers({'content-Type': 'application/json'})};
 @Injectable()
 export class BlogListService {
